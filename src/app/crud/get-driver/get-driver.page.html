@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar Chofer</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="admin" text="Regresar"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form class="formulario" (ngSubmit)="save(form)" #form="ngForm">
+    <input type="text" name="nombre" class="usuario" placeholder="Ingrese su nombre" [(ngModel)]="datos.nombre">
+    <input type="text" name="apellidos" class="apellidos" value="" placeholder="Apellidos"
+      [(ngModel)]="datos.apellidos">
+    <input type="email" name="correo" class="email" placeholder="Ingrese su nombre de usuario"
+      [(ngModel)]="datos.correo">
+    <input type="password" name="password" class="pass" placeholder="******" disabled>
+    <div class="edad-age">
+      <input type="tel" name="telefono" class="nTel" placeholder="Numero Telefonico" [(ngModel)]="datos.telefono">
+      <input type="number" name="edad" class="edad-age" placeholder="Edad" [(ngModel)]="datos.edad">
+    </div>
+    <input type="text" name="modelo_automovil" class="campos" placeholder="Ingrese su modelo de automovil" [(ngModel)]="datos.modelo_automovil">
+    <input type="text" name="direccion" class="campos" placeholder="Ingrese su dirección" [(ngModel)]="datos.direccion">
+    <input type="text" name="rfc" class="campos" placeholder="Ingrese su RFC" [(ngModel)]="datos.rfc">
+    <input type="text" name="curp" class="campos" placeholder="Ingrese su CURP" [(ngModel)]="datos.curp">
+    <input type="text" name="acta_nacimiento" class="campos" placeholder="Ingrese su acta de nacimiento" [(ngModel)]="datos.acta_nacimiento">
+    <input type="text" name="ine" class="campos" placeholder="Ingrese su INE" [(ngModel)]="datos.ine">
+    <input type="text" name="licencia_conducir" class="campos" placeholder="Ingrese su licencia de conducir" [(ngModel)]="datos.licencia_conducir">
+    <input type="text" name="permiso_carga" class="campos" placeholder="Ingrese su permiso de carga" [(ngModel)]="datos.permiso_carga">
+    <input type="text" name="comprobante_domicilio" class="campos" placeholder="Ingrese su comprobante de domicilio" [(ngModel)]="datos.comprobante_domicilio">
+
+    <div class="botones">
+      <button type="submit" class="btn btn-primario">Guardar cambios</button>
+    </div>
+  </form>
+</ion-content>

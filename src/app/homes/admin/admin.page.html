@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title align="center">Admin</ion-title>
+    <ion-buttons slot="end">
+        <ion-icon name="log-out-outline" (click)="logOut()"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div>
+        <div class="header-img">
+            <img src="../../../assets/imgmudt/PNG_Ubicación.png" alt="">
+        </div>
+        <div class="interfaz">
+            <div class="indicaciones">
+                <h1 class="titulo-form">Bienvenido Administrador</h1>
+                <p class="text-body1">
+                    Para realizar cambios en el sistema, selecciona la opción de su preferencia
+                </p>
+            </div>
+            <div class="opciones">
+                <h2 class="titutlo-form-h2">Usuarios</h2>
+                <div class="card-opcion">
+                    <a [routerLink]="['/admincrud']"  class="btn btn-terciario">Ver Usuarios</a>
+                </div>
+                <div class="card-opcion">
+                    <a [routerLink]="['/get-client']" class="btn btn-terciario">Editar Usuarios</a>
+                </div>
+                <h2 class="titutlo-form-h2">Choferes</h2>
+                <div class="card-opcion">
+                    <a [routerLink]="['/admin-driver']"  class="btn btn-terciario">Ver Choferes</a>
+                </div>
+                <div class="card-opcion">
+                    <a [routerLink]="['/get-drivers']" class="btn btn-terciario">Editar Choferes</a>
+                </div>
+                <div class="card-opcion">
+                    <a [routerLink]="['/solicitudes']" class="btn btn-terciario">Solicitud de choferes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>

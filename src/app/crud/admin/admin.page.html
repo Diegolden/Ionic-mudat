@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title align="center"> Ver clientes</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="admin" text="Regresar"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <div class="container-phone">
+        <div class="interfaz">
+            <div class="indicaciones">
+                <h1 class="titulo-form">Usuarios de Muda-T</h1>
+                <p class="text-body1">A continuación podras ver, agregar, editar y/o elimnar datos de usuarios</p>
+            </div>
+            <form (ngSubmit)="save(form)" #form="ngForm">
+              <div class="formulario">
+                <div class="edad-age">
+                  <input type="email" name="correo" [(ngModel)]="formulario.correo" placeholder="Buscar Usuario">
+                  <button type="submit"  >Buscar</button>
+                </div>
+              </div>
+            </form>
+            <div class="table" *ngIf="!datos.nombres">
+              <h1 class="titulo-form" align="center">No hay datos</h1>
+            </div>
+            <div class="table" *ngIf="datos.nombres">
+                <table border="1" >
+                    <tr>
+                      <th>Nombre</th>
+                      <td align="center">{{datos.nombres}} {{datos.apellidos}}</td>
+                    </tr>
+                    <tr>
+                      <th>Correo</th>
+                      <td align="center">{{datos.username}}</td>
+                    </tr>
+                    <tr>
+                      <th>Teléfono</th>
+                      <td align="center">{{datos.telefono}}</td>
+                    </tr>
+                    <tr>
+                      <th>Edad</th>
+                      <td align="center">{{datos.edad}}</td>
+                    </tr>
+                    <tr *ngIf="datos.nombres">
+                      <th>Opciones</th>
+                      <td align="center">
+                        <a (click)="editar(datos.id_user)" class="btn btn-editar">Editar</a>
+                        <br>
+                        <br>
+                        <a (click)="eliminar(datos.id_user)" class="btn btn-eliminar">Eliminar</a>
+                      </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Choferes</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="admin" text="Regresar"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="interfaz">
+    <div class="indicaciones">
+      <h1 class="titulo-form">Usuarios de Muda-T</h1>
+      <p class="text-body1">A continuación podras ver, agregar, editar y/o elimnar datos de usuarios</p>
+    </div>
+    <table border="1">
+      <tr>
+        <th>Nombres</th>
+        <th>Correo</th>
+        <th>Opciones</th>
+      </tr>
+      <tr *ngFor="let datos of table">
+        <td>{{datos.nombre}} {{datos.apellidos}}</td>
+        <td>{{datos.correo}}</td>
+        <td align="center">
+          <a (click)="editar(datos.id_chofer)" class="btn btn-editar">Editar</a>
+          <br><br>
+          <a (click)="eliminar(datos.id_chofer)" class="btn btn-eliminar">Eliminar</a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</ion-content>

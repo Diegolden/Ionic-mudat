@@ -1,0 +1,121 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Choferes</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="admin" text="Regresar"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <div class="container-phone">
+      <div class="interfaz">
+        <div class="indicaciones">
+          <h1 class="titulo-form">Choferes de Muda-T</h1>
+          <p class="text-body1">A continuación podras ver, agregar, editar y/o eliminar datos de choferes</p>
+        </div>
+        <form (ngSubmit)="save(form)" #form="ngForm">
+          <div class="formulario">
+            <div class="edad-age">
+              <input type="email" name="correo" [(ngModel)]="formulario.correo" placeholder="Buscar Usuario">
+              <button type="submit">Buscar</button>
+            </div>
+          </div>
+        </form>
+        <div class="table" *ngIf="!datos.nombre">
+          <h1 class="titulo-form" align="center">No hay datos</h1>
+        </div>
+        <div class="table" *ngIf="datos.nombre">
+          <table border="1">
+            <tr>
+              <th>Nombre</th>
+              <td align="center">{{datos.nombre}} {{datos.apellidos}}</td>
+            </tr>
+            <tr>
+              <th>Correo</th>
+              <td align="center">{{datos.correo}}</td>
+            </tr>
+            <tr>
+              <th>Teléfono</th>
+              <td align="center">{{datos.telefono}}</td>
+            </tr>
+            <tr>
+              <th>Edad</th>
+              <td align="center">{{datos.edad}}</td>
+            </tr>
+
+            <tr>
+              <th>RFC</th>
+              <td align="center">{{datos.rfc.toUpperCase()}}</td>
+            </tr>
+            <tr>
+              <th>CURP</th>
+              <td align="center">{{datos.curp.toUpperCase()}}</td>
+            </tr>
+            <tr>
+              <th>Modelo de automovil</th>
+              <td align="center">{{datos.modelo_automovil}}</td>
+            </tr>
+            <tr>
+              <th>Acta de nacimiento</th>
+              <td align="center"><img id="trigger-button" src="{{datos.acta_nacimiento}}" alt="acta_nacimiento"></td>
+              <ion-modal class="caja" trigger="trigger-button" [swipeToClose]="true">
+                <ng-template>
+                  <img src="{{datos.acta_nacimiento}}" alt="acta_nacimiento" >
+                </ng-template>
+              </ion-modal>
+            </tr>
+            <tr>
+              <th>INE</th>
+              <td align="center"><img id="trigger-button-2" src="{{datos.ine}}" alt="ine"></td>
+              <ion-modal class="caja" trigger="trigger-button-2" [swipeToClose]="true">
+                <ng-template>
+                  <img src="{{datos.ine}}" alt="acta_nacimiento">
+                </ng-template>
+              </ion-modal>
+            </tr>
+            <tr>
+              <th>Licencia de conducir</th>
+              <td align="center"><img id="trigger-button-3" src="{{datos.licencia_conducir}}" alt="licencia_conducir"></td>
+              <ion-modal class="caja" trigger="trigger-button-3" [swipeToClose]="true">
+                <ng-template>
+                  <img src="{{datos.licencia_conducir}}" alt="acta_nacimiento">
+                </ng-template>
+              </ion-modal>
+            </tr>
+
+            <tr>
+              <th>Permiso de carga</th>
+              <td align="center"><img id="trigger-button-4" src="{{datos.permiso_carga}}" alt="permiso_carga"></td>
+              <ion-modal class="caja" trigger="trigger-button-4" [swipeToClose]="true">
+                <ng-template>
+                  <img src="{{datos.permiso_carga}}" alt="acta_nacimiento">
+                </ng-template>
+              </ion-modal>
+            </tr>
+            <tr>
+              <th>Comprobante de domicilio</th>
+              <td align="center"><img id="trigger-button-5" src="{{datos.comprobante_domicilio}}" alt="domicilio"></td>
+              <ion-modal class="caja" trigger="trigger-button-5" [swipeToClose]="true">
+                <ng-template>
+                  <img src="{{datos.comprobante_domicilio}}" alt="acta_nacimiento">
+                </ng-template>
+              </ion-modal>
+            </tr>
+
+            <tr *ngIf="datos.nombre">
+              <th>Opciones</th>
+              <td align="center">
+                <a (click)="editar(datos.id_chofer)" class="btn btn-editar">Editar</a>
+                <br>
+                <br>
+                <a (click)="eliminar(datos.id_chofer)" class="btn btn-eliminar">Eliminar</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

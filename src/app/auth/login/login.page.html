@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title align="center">Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <div class="container-phone">
+        <div class="header">
+            <img src="../../../assets/imgmudt/PNG_IMG_Registro Sesión Opción 2.png" alt="">
+        </div>
+        <div class="interfaz">
+                <div class="indicaciones">
+                    <h1 class="titulo-form">INICAR SESIÓN</h1>
+                    <p class="text-body1">Es un gusto tenerte de vuelta <br>
+                    Ingresa tus datos para iniciar Sesión</p>
+                </div>
+                <form class="formulario" (ngSubmit)="save(form)" #form="ngForm">
+                    <input type="email" name="username" class="input usuario" placeholder="Ingrese su Usuario" [(ngModel)]="login.username">
+                    <input type="password" name="password" class="input pass" placeholder="Ingrese su contraseña" [(ngModel)]="login.password">
+                    <div class="botones">
+                        <a [routerLink]="['/restore']" class="btn-terciario">Olvide mi contraseña</a>
+                        <button type="sumbit" class="btn btn-primario"> INICIAR SESIÓN</button>
+                        <a href="" class="btn btn-secundario"><i class="fa fa-google"></i> INICIAR SESIÓN CON GOOGLE</a>
+                        <p class="text-body1 btn">¿No tienes cuenta? <a [routerLink]="['/registro']" class="btn-terciario">Registrate</a> </p>
+                        
+                        <a [routerLink]="['/login-chofer']" class="btn-terciario">Acceder como chofer</a>
+                    </div>
+  
+                </form>
+  
+                </div>
+                
+        </div>
+    </div>
+</ion-content>

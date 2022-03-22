@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title align="center">Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <div class="container-phone">
+        <div class="header">
+            <img src="../../../assets/imgmudt/PNG_IMG_Registro Sesión Opción 2.png" alt="">
+        </div>
+        <div class="interfaz">
+            
+            <div class="indicaciones">
+                <h1 class="titulo-form">Registrate</h1>
+                <p class="text-body1">¿Eres un usuario nuevo?</p>
+                <p class="text-body1">Rellena el siguiente formulario para formar parte de la familia</p>
+                <div class="iconos-gofa">
+                    <a href=""><i class="fa fa-facebook"></i></a>
+                    <a href=""><i class="fa fa-google"></i></a>
+                </div>
+            </div>
+
+            <form class="formulario" (ngSubmit)="save(form)" #form="ngForm">
+                    <input type="text" name="nombres" class="usuario" placeholder="Ingrese su nombre" [(ngModel)]="registro.nombres">
+                    <input type="text" name="apellidos" class="apellidos" value="" placeholder="Apellidos" [(ngModel)]="registro.apellidos">
+                    <input type="email" name="username" class="email" placeholder="Ingrese su nombre de usuario" [(ngModel)]="registro.username">
+                    <input type="password" name="password" class="pass" placeholder="Ingrese su contraseña" [(ngModel)]="registro.password">
+                    <div class="edad-age">
+                        <input type="tel" name="telefono" class="nTel" placeholder="Numero Telefonico" [(ngModel)]="registro.telefono">
+                        <input type="number" name="edad" class="edad" placeholder="Edad" [(ngModel)]="registro.edad">
+                        
+                    </div>
+                    <div class="botones">
+                        <button type="submit" class="btn btn-primario">Registrar</button>
+                    </div>
+            </form>
+
+                
+        </div>
+    </div>
+</div>
+</ion-content>

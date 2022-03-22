@@ -1,20 +1,18 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<div class="container">
+  <div class="container-phone">
+      <div class="interfaz">
+          <div class="img">
+              <img src="../../assets/imgmudt/PNG_VectorInicio.png" alt="">
+          </div>
+          <div class="text">
+              <span class="logo">Muda-T</span>
+              <p class="bienvenido">Bienvenido a Muda-T</p>
+              <p class="frase">Expertos en Transportar tus Mejores Momentos</p>
+          </div>
+          <div class="botones">
+              <a [routerLink]="['/login']"  class="btn btn-primario">INICIAR SESIÓN</a>
+              <a [routerLink]="['/registro']" class="btn btn-secundario">REGISTRARME</a>
+          </div>
+      </div>
   </div>
-</ion-content>
+</div>
